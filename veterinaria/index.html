@@ -1,97 +1,336 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetConnect</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Dashboard - VetConnect</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>VetConnect</h1>
-        <p>Sistema de gestión veterinaria</p>
-    </header>
-
+    <!-- Navbar responsive -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
 
-            <a class="navbar-brand" href="index.html">VetConnect</a>
+            <a class="navbar-brand" href="index.html">
+                VetConnect
+            </a>
 
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#menuPrincipal">
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal">
+
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menuPrincipal">
-             <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
 
-                 <li class="nav-item">
-                        <a class="nav-link" href="mascotas.html">Mascotas</a>
-                 </li>
+                <div class="navbar-nav ms-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-                </ul>
+                    <a class="nav-link active" href="index.html">
+                        Dashboard
+                    </a>
+
+                    <a class="nav-link" href="mascotas.html">
+                        Mascotas
+                    </a>
+
+                    <a class="nav-link" href="contacto.html">
+                        Contacto
+                    </a>
+
+                </div>
+
             </div>
 
         </div>
     </nav>
 
-    <main>
 
-       <section class="container my-5">
-    <h2 class="text-center mb-4">Servicios</h2>
+    <main class="container mt-4 mt-md-5">
 
-    <div class="row g-4">
+        <!-- Encabezado -->
+        <div class="d-flex flex-column flex-md-row
+                    justify-content-between
+                    align-items-md-center
+                    gap-3 mb-4">
 
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Mascotas</h5>
-                    <p class="card-text">Administra las mascotas registradas.</p>
-                    <a href="mascotas.html" class="btn btn-primary">Ver mascotas</a>
-                </div>
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p class="text-muted mb-0">
+                    Resumen general de VetConnect
+                </p>
+
             </div>
+
+            <div class="d-flex flex-column flex-md-row gap-2">
+
+                <a href="mascotas.html"
+                   class="btn btn-primary">
+
+                    Registrar mascota
+
+                </a>
+
+                <button id="mostrarToast"
+                        class="btn btn-outline-success">
+
+                    Probar notificación
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Consultas</h5>
-                    <p class="card-text">Gestiona las consultas veterinarias.</p>
-                    <a href="#" class="btn btn-primary">Ver consultas</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Vacunas</h5>
-                    <p class="card-text">Consulta el historial de vacunación.</p>
-                    <a href="#" class="btn btn-primary">Ver vacunas</a>
-                </div>
-            </div>
-        </div>
+        <!-- Indicadores -->
+        <section class="row g-4 mb-5">
 
-    </div>
-</section>
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body text-center">
+
+                        <h2 class="display-6 fw-bold">
+                            124
+                        </h2>
+
+                        <p class="card-text">
+                            Mascotas registradas
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body text-center">
+
+                        <h2 class="display-6 fw-bold">
+                            8
+                        </h2>
+
+                        <p class="card-text">
+                            Consultas de hoy
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body text-center">
+
+                        <h2 class="display-6 fw-bold">
+                            5
+                        </h2>
+
+                        <p class="card-text">
+                            Vacunas pendientes
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Próximas citas -->
+        <section class="mb-5">
+
+            <h2 class="mb-3">
+                Próximas citas
+            </h2>
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <p>
+                        <strong>10:30</strong> - Firulais
+
+                        <span class="badge bg-success">
+                            Confirmada
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>12:00</strong> - Michi
+
+                        <span class="badge bg-warning text-dark">
+                            Pendiente
+                        </span>
+                    </p>
+
+                    <p class="mb-0">
+                        <strong>16:00</strong> - Luna
+
+                        <span class="badge bg-danger">
+                            Cancelada
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Últimas mascotas -->
+        <section>
+
+            <h2 class="mb-3">
+                Últimas mascotas registradas
+            </h2>
+
+            <div class="table-responsive">
+
+                <table class="table table-striped align-middle">
+
+                    <thead>
+
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Especie</th>
+                            <th>Edad</th>
+                            <th>Estado</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Firulais</td>
+                            <td>Perro</td>
+                            <td>5</td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Activo
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Michi</td>
+                            <td>Gato</td>
+                            <td>3</td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Activo
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Luna</td>
+                            <td>Perro</td>
+                            <td>2</td>
+
+                            <td>
+                                <span class="badge bg-warning text-dark">
+                                    En revisión
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
 
     </main>
 
-    <footer>
-        <p>Desarrollo Web y Móvil 2026</p>
-    </footer>
+
+    <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="toastMascota"
+             class="toast"
+             role="alert">
+
+            <div class="toast-header">
+
+                <strong class="me-auto">
+                    VetConnect
+                </strong>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast">
+                </button>
+
+            </div>
+
+            <div class="toast-body">
+
+                Mascota registrada correctamente.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        const botonToast = document.getElementById("mostrarToast");
+        const toastElemento = document.getElementById("toastMascota");
+
+        botonToast.addEventListener("click", function () {
+
+            const toast = new bootstrap.Toast(toastElemento);
+
+            toast.show();
+
+        });
+
+    </script>
+
 </body>
 
 </html>
